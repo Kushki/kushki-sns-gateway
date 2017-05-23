@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "declaration": true,
+        "target": "ES6",
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "baseUrl": ".",
+        "awesomeTypescriptLoaderOptions": {
+            "useBabel": true
+        },
+        "exclude": [
+            "node_modules"
+        ]
+    }
+}

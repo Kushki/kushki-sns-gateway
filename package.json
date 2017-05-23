@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Kushki SNS Gateway for managing AWS events.",
   "main": "index.js",
+  "typings": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +14,8 @@
   "keywords": [
     "SNS",
     "AWS",
-    "gateway"
+    "gateway",
+    "typescript"
   ],
   "author": "Kushki Dev",
   "license": "ISC",
@@ -21,4 +23,12 @@
     "url": "https://github.com/Kushki/kushki-sns-gateway/issues"
   },
   "homepage": "https://github.com/Kushki/kushki-sns-gateway#readme"
+  "devDependencies": {
+    "tsconfig-paths": "^2.1.2",
+    "tslint": "^5.2.0",
+    "tslint-eslint-rules": "^4.0.0",
+    "tslint-microsoft-contrib": "^5.0.0",
+    "typescript": "^2.3.3",
+    "typings": "^2.1.1"
+  }
 }
