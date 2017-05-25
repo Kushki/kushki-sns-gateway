@@ -1,6 +1,6 @@
 {
   "extends": [
-    "tslint-eslint-rules",
+    "tslintinst-eslint-rules",
     "tslint-microsoft-contrib"
   ],
   "rules": {

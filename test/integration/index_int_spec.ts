@@ -1,7 +1,8 @@
 /**
  * Created by david on 5/25/17.
  */
-import * as AWS from 'aws-sdk-mock';
+import * as AWS from 'aws-sdk';
+import * as AWSM from 'aws-sdk-mock';
 import * as chai from 'chai';
 import {expect} from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
@@ -17,8 +18,11 @@ describe('KushkiSnsGateway - ', () => {
 
     beforeEach(async () => {
        topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
-       message = 'patomarica';
+       message = 'vamos a comer';
        region = 'us-east-1';
+        AWS.config.update({
+            accessKeyId: process.env.accessKeyId,
+            secretAccessKey: process.env.secretAccessKey});
     });
     it('check snsGateway class with successful response', async () => {
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
@@ -27,7 +31,7 @@ describe('KushkiSnsGateway - ', () => {
     });
 
     it('check snsGateway class with non successful response', async () => {
-        AWS.restore('SNS', 'publish');
+        AWSM.restore('SNS', 'publish');
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
         return expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');

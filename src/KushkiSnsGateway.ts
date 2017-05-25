@@ -30,9 +30,6 @@ export class KushkiSnsGateway {
         }
     }
     private async snsPublish(event: string): Promise<PublishResponse> {
-        AWS.config.update({
-            accessKeyId: 'AKIAI7AGSKNTWFWDWYIA',
-            secretAccessKey: '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'});
         AWS.config.region = this.region;
         const SNS: AWS.SNS = new AWS.SNS();
 

@@ -39,9 +39,6 @@ class KushkiSnsGateway {
     }
     snsPublish(event) {
         return __awaiter(this, void 0, void 0, function* () {
-            // AWS.config.update({
-            //     accessKeyId: '',
-            //     secretAccessKey: ''});
             AWS.config.region = this.region;
             const SNS = new AWS.SNS();
             return yield SNS.publish({
