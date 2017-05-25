@@ -1,0 +1,6 @@
+.DS_Store
+/test
+/.env
+/typings
+/yarn-error.log
+/dist/test
