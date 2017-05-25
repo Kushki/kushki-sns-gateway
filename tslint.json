@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "tslint-eslint-rules",
+    "tslint-microsoft-contrib"
+  ],
+  "rules": {
+    "no-console": [true, "log"],
+    "no-suspicious-comment": false,
+    "no-multiline-string": false,
+    "no-unsafe-any": false
+  }
+}

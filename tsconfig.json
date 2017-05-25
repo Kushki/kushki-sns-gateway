@@ -1,10 +1,32 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "declaration": true,
-        "outDir": "dist"
+"compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "target": "ES6",
+    "sourceMap": false,
+    "alwaysStrict": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths":{
+        "src/*":[
+            "src/*"
+        ],
+        "utils/*":[
+            "src/utils/*"
+        ],
+        "validators/*":[
+            "src/validators/*"
+        ],
+        "test/*":[
+            "test/helper/*"
+        ]
     }
+},
+"awesomeTypescriptLoaderOptions": {
+    "useBabel": true
+},
+"exclude": [
+    "node_modules"
+]
 }

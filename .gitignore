@@ -1,2 +1,5 @@
 /.idea
 .DS_Store
+/yarn-error.log
+/typings
+/node_modules

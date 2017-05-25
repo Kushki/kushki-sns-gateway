@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "String_model",
+  "title": "String_model",
+  "type": "object",
+  "properties": {
+    "random": {
+      "type":"string"
+    }
+  },
+  "required": [
+    "random"
+  ]
+}
