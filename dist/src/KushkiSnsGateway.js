@@ -11,8 +11,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Created by david on 5/23/17.
  */
+/* tslint:disable:no-relative-imports */
 const AWS = require("aws-sdk");
-const Validators_1 = require("utils/Validators");
+const Validators_1 = require("./utils/Validators");
 /**
  * KushkiSnsGateway it's a gateway from a dynamoDB event to sns.
  * @class KushkiSnsGateway

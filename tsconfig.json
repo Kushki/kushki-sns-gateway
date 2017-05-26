@@ -5,6 +5,7 @@
     "noImplicitAny": false,
     "target": "ES6",
     "sourceMap": false,
+    "declaration": true,
     "alwaysStrict": true,
     "outDir": "dist",
     "baseUrl": ".",

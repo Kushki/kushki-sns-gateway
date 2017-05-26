@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "Dynamo_records_output",
+  "title": "Dynamo_records_output",
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "array",
+      "maxItems": 1,
+      "Records":{
+        "type": "object",
+        "properties":{
+          "dynamodb":{
+            "type": "object",
+            "properties":{
+              "Keys": {
+                "type": "object",
+                "properties":{
+                  "id":{
+                    "type": "string",
+                    "pattern": "^[0-9]{12}$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+    }
+  },
+  "required": [
+    "event"
+  ]
+}

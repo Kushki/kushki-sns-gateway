@@ -1,9 +1,10 @@
 /**
  * Created by david on 5/23/17.
  */
+/* tslint:disable:no-relative-imports */
 import * as AWS from 'aws-sdk';
 import {PublishResponse} from 'aws-sdk/clients/sns';
-import {Validators} from 'utils/Validators';
+import {Validators} from './utils/Validators';
 /**
  * KushkiSnsGateway it's a gateway from a dynamoDB event to sns.
  * @class KushkiSnsGateway

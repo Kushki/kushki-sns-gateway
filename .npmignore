@@ -4,3 +4,11 @@
 /typings
 /yarn-error.log
 /dist/test
+.idea
+.env.example
+/node_modules
+/typings.json
+/tslint.json
+/tsconfig.json
+/src
+/schemas
