@@ -1,7 +1,7 @@
+"use strict";
 /**
  * Created by david on 5/24/17.
  */
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * KushkiError Generic captured error.
