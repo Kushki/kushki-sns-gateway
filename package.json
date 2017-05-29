@@ -1,11 +1,15 @@
 {
   "name": "kushki-sns-gateway",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Kushki SNS Gateway for managing AWS events.",
   "main": "dist/KushkiSnsGateway.js",
   "typings": "src/KushkiSnsGateway",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn run test:unit && yarn run test:integration",
+    "test:unit": "--compilers ts:ts-node/register -r tsconfig-paths/register --ignore *.js",
+    "test:integration": "webpack --env.ksh_test integration && ./shell/sls_integration_test.sh",
+    "yarn:install": "yarn install && chmod -R 644 node_modules",
+    "tsc:typing": "typings install"
   },
   "repository": {
     "type": "git",

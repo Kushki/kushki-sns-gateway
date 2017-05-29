@@ -17,8 +17,8 @@ let region: string;
 describe('KushkiSnsGateway - ', () => {
 
     beforeEach(async () => {
-       topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
-       message = 'vamos a comer';
+       topicArn = 'arn:aws:sns:us-east-1:073501845287:ci-dispatcher';
+       message = 'otra';
        region = 'us-east-1';
        AWS.config.update({
             accessKeyId: process.env.accessKeyId,

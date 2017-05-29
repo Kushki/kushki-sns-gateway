@@ -27,6 +27,7 @@ export class KushkiSnsGateway {
             validator.validate();
             await this.snsPublish(event);
         } catch (err) {
+            console.info(err);
             throw new Error('error');
         }
     }

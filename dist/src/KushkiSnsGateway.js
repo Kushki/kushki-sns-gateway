@@ -34,6 +34,7 @@ class KushkiSnsGateway {
                 yield this.snsPublish(event);
             }
             catch (err) {
+                console.info(err);
                 throw new Error('error');
             }
         });
