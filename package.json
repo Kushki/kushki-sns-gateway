@@ -1,5 +1,5 @@
 {
-  "name": "@kushki/kushki-sns-gateway",
+  "name": "@kushki/sns-gateway",
   "version": "0.0.2",
   "description": "Kushki SNS Gateway for managing AWS events.",
   "main": "dist/src/KushkiSnsGateway.js",
