@@ -1,0 +1,4 @@
+node_modules/
+typings/
+Makefile
+yarn-error.log
