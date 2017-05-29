@@ -1,0 +1,8 @@
+--compilers ts:ts-node/register -r tsconfig-paths/register
+--ignore *.js
+--ignore *.d.ts
+--require source-map-support/register
+--recursive
+--colors
+--sort
+--timeout 10000

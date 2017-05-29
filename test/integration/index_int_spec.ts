@@ -17,8 +17,8 @@ let region: string;
 describe('KushkiSnsGateway - ', () => {
 
     beforeEach(async () => {
-       topicArn = 'arn:aws:sns:us-east-1:073501845287:ci-dispatcher';
-       message = 'otra';
+       topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
+       message = 'aaaaaaaa';
        region = 'us-east-1';
        AWS.config.update({
             accessKeyId: process.env.accessKeyId,
@@ -31,7 +31,7 @@ describe('KushkiSnsGateway - ', () => {
     });
 
     it('check snsGateway class with non successful response', async () => {
-        AWSM.restore('SNS', 'publish');
+        // AWSM.restore('SNS', 'publish');
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
         return expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');

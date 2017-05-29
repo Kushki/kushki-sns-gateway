@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Created by david on 5/25/17.
  */
 const AWS = require("aws-sdk");
-const AWSM = require("aws-sdk-mock");
 const chai = require("chai");
 const chai_1 = require("chai");
 const chaiAsPromised = require("chai-as-promised");
@@ -23,8 +22,8 @@ let message;
 let region;
 describe('KushkiSnsGateway - ', () => {
     beforeEach(() => __awaiter(this, void 0, void 0, function* () {
-        topicArn = 'arn:aws:sns:us-east-1:073501845287:ci-dispatcher';
-        message = 'otra';
+        topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
+        message = 'aaaaaaaa';
         region = 'us-east-1';
         AWS.config.update({
             accessKeyId: process.env.accessKeyId,
@@ -36,7 +35,7 @@ describe('KushkiSnsGateway - ', () => {
         return chai_1.expect(kushkiSns.payedEfecty(message)).not.to.eventually.rejectedWith('error');
     }));
     it('check snsGateway class with non successful response', () => __awaiter(this, void 0, void 0, function* () {
-        AWSM.restore('SNS', 'publish');
+        // AWSM.restore('SNS', 'publish');
         const kushkiSns = new KushkiSnsGateway_1.KushkiSnsGateway(topicArn, region);
         return chai_1.expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');
     }));
