@@ -23,14 +23,14 @@ describe('KushkiSnsGateway - ', () => {
             secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
         });
     });
-    it('check snsGateway class with successful response', (done) => {
+    it('check snsGateway class with successful response', (done: (err: Error) => void) => {
         topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
         return expect(kushkiSns.payedEfecty(message)).to.eventually.notify(done);
     });
 
-    it('check snsGateway class with non successful response', (done) => {
+    it('check snsGateway class with non successful response', (done: (err: Error) => void) => {
         topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
