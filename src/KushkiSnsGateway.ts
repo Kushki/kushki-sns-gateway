@@ -4,7 +4,7 @@
 /* tslint:disable:no-relative-imports */
 import * as AWS from 'aws-sdk';
 import {PublishResponse} from 'aws-sdk/clients/sns';
-import {Validators} from './utils/Validators';
+import {KushkiValidators} from './utils/KushkiValidators';
 /**
  * KushkiSnsGateway it's a gateway from a dynamoDB event to sns.
  * @class KushkiSnsGateway
@@ -23,7 +23,7 @@ export class KushkiSnsGateway {
             const stringValid: {random: string} = {
                 random: event
             };
-            const validator: Validators = new Validators(stringValid, 'string_model');
+            const validator: KushkiValidators = new KushkiValidators(stringValid, 'string_model');
             validator.validate();
             return await this.snsPublish(event);
         } catch (err) {

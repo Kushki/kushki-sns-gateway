@@ -10,10 +10,10 @@ import {KushkiError} from './KushkiError';
 export type Models = 'string_model'
     | 'dynamo_records_output';
 /**
- * Validators check valid schema for all classes.
+ * KushkiValidators check valid schema for all classes.
  * @class PaymentReceipt
  */
-export class Validators {
+export class KushkiValidators {
     private body: object;
     private schemaFile: Models;
 

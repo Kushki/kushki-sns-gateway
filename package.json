@@ -1,8 +1,8 @@
 {
-  "name": "kushki-sns-gateway",
-  "version": "0.0.11",
+  "name": "@kushki/kushki-sns-gateway",
+  "version": "0.0.2",
   "description": "Kushki SNS Gateway for managing AWS events.",
-  "main": "dist/KushkiSnsGateway.js",
+  "main": "dist/src/KushkiSnsGateway.js",
   "typings": "src/KushkiSnsGateway",
   "scripts": {
     "test": "yarn run test:unit && yarn run test:integration",

@@ -7,7 +7,7 @@ const Ajv = require("ajv");
 const fs = require("fs");
 const KushkiError_1 = require("src/utils/KushkiError");
 /**
- * Validators check valid schema for all classes.
+ * KushkiValidators check valid schema for all classes.
  * @class PaymentReceipt
  */
 class Validators {

@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 /* tslint:disable:no-relative-imports */
 const AWS = require("aws-sdk");
-const Validators_1 = require("./utils/Validators");
+const KushkiValidators_1 = require("./utils/KushkiValidators");
 /**
  * KushkiSnsGateway it's a gateway from a dynamoDB event to sns.
  * @class KushkiSnsGateway
@@ -29,7 +29,7 @@ class KushkiSnsGateway {
                 const stringValid = {
                     random: event
                 };
-                const validator = new Validators_1.Validators(stringValid, 'string_model');
+                const validator = new KushkiValidators_1.KushkiValidators(stringValid, 'string_model');
                 validator.validate();
                 return yield this.snsPublish(event);
             }
