@@ -26,8 +26,8 @@ describe('KushkiSnsGateway - ', () => {
         message = 'aaaaaaaa';
         region = 'us-east-1';
         AWS.config.update({
-            accessKeyId: process.env.accessKeyId,
-            secretAccessKey: process.env.secretAccessKey
+            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
         });
     }));
     it('check snsGateway class with successful response', () => __awaiter(this, void 0, void 0, function* () {
@@ -35,7 +35,6 @@ describe('KushkiSnsGateway - ', () => {
         return chai_1.expect(kushkiSns.payedEfecty(message)).not.to.eventually.rejectedWith('error');
     }));
     it('check snsGateway class with non successful response', () => __awaiter(this, void 0, void 0, function* () {
-        // AWSM.restore('SNS', 'publish');
         const kushkiSns = new KushkiSnsGateway_1.KushkiSnsGateway(topicArn, region);
         return chai_1.expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');
     }));

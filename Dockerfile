@@ -11,7 +11,6 @@ COPY . /usr/src/app
 
 RUN mkdir typings
 RUN yarn run tsc:typing
-RUN rm -f ./typings/modules/aws-lambda/index.d.ts
 
 EXPOSE 3000
 CMD [ "yarn", "run" ]

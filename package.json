@@ -8,18 +8,12 @@
     "test": "yarn run test:unit && yarn run test:integration",
     "test:unit": "mocha test/unit/**.ts",
     "test:coverage": "nyc yarn run test:unit",
-    "test:functional": "mocha test/functional/**.ts",
     "test:integration": "mocha test/integration/**.ts",
     "yarn:install": "yarn install && chmod -R 644 node_modules",
-    "deploy": "serverless deploy",
-    "deploy-dev": "export SLS_STAGE=dev && yarn run deploy",
     "lint:duplicate": "yarn run jscpd",
     "lint:check": "tslint --project 'tsconfig.json' --type-check -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint --project 'tsconfig.json' --type-check -c tslint.json --fix 'src/**/*.ts' 'test/**/*.ts'",
-    "tsc:typing": "typings install",
-    "watch": "webpack --watch",
-    "tsc:clean": "rm -rf node_modules && serverless deploy",
-    "tsc:interface": "./shell/sls_schema_typings.sh"
+    "tsc:typing": "typings install"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,6 @@
  * Created by david on 5/25/17.
  */
 import * as AWS from 'aws-sdk';
-import * as AWSM from 'aws-sdk-mock';
 import * as chai from 'chai';
 import {expect} from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
@@ -31,7 +30,6 @@ describe('KushkiSnsGateway - ', () => {
     });
 
     it('check snsGateway class with non successful response', async () => {
-        // AWSM.restore('SNS', 'publish');
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
         return expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');
