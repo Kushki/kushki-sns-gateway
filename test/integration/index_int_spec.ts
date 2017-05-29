@@ -15,23 +15,25 @@ let region: string;
 
 describe('KushkiSnsGateway - ', () => {
 
-    beforeEach(async () => {
-       topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
-       message = 'aaaaaaaa';
-       region = 'us-east-1';
-       AWS.config.update({
+    beforeEach(() => {
+        region = 'us-east-1';
+        message = 'aaaaaaaa';
+        AWS.config.update({
             accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY});
+            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+        });
     });
-    it('check snsGateway class with successful response', async () => {
+    it('check snsGateway class with successful response', (done) => {
+        topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
-        return expect(kushkiSns.payedEfecty(message)).not.to.eventually.rejectedWith('error');
+        return expect(kushkiSns.payedEfecty(message)).to.eventually.notify(done);
     });
 
-    it('check snsGateway class with non successful response', async () => {
+    it('check snsGateway class with non successful response', (done) => {
+        topicArn = 'arn:aws:sns:us-east-1:073501845287:example-kushki';
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(topicArn, region);
 
-        return expect(kushkiSns.payedEfecty(message)).to.eventually.rejectedWith('error');
+        return expect(kushkiSns.payedEfecty(message)).to.eventually.rejected.and.notify(done);
     });
 });

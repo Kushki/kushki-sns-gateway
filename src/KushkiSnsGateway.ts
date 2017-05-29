@@ -18,23 +18,23 @@ export class KushkiSnsGateway {
         this.region = region;
     }
 
-    public async payedEfecty(event: string): Promise<void> {
+    public async payedEfecty(event: string): Promise<PublishResponse> {
         try {
             const stringValid: {random: string} = {
                 random: event
             };
             const validator: Validators = new Validators(stringValid, 'string_model');
             validator.validate();
-            await this.snsPublish(event);
+            return await this.snsPublish(event);
         } catch (err) {
-            throw new Error('error');
+            throw err;
         }
     }
-    private async snsPublish(event: string): Promise<PublishResponse> {
+    private snsPublish(event: string): Promise<PublishResponse> {
         AWS.config.region = this.region;
         const SNS: AWS.SNS = new AWS.SNS();
 
-        return await SNS.publish({
+        return SNS.publish({
             Message: event,
             TopicArn: this.topicArn
         }).promise();

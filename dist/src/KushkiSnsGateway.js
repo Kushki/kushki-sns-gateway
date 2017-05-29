@@ -31,22 +31,20 @@ class KushkiSnsGateway {
                 };
                 const validator = new Validators_1.Validators(stringValid, 'string_model');
                 validator.validate();
-                yield this.snsPublish(event);
+                return yield this.snsPublish(event);
             }
             catch (err) {
-                throw new Error('error');
+                throw err;
             }
         });
     }
     snsPublish(event) {
-        return __awaiter(this, void 0, void 0, function* () {
-            AWS.config.region = this.region;
-            const SNS = new AWS.SNS();
-            return yield SNS.publish({
-                Message: event,
-                TopicArn: this.topicArn
-            }).promise();
-        });
+        AWS.config.region = this.region;
+        const SNS = new AWS.SNS();
+        return SNS.publish({
+            Message: event,
+            TopicArn: this.topicArn
+        }).promise();
     }
 }
 exports.KushkiSnsGateway = KushkiSnsGateway;
