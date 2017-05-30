@@ -1,0 +1,1 @@
+Package to manage SNS connections in AWS

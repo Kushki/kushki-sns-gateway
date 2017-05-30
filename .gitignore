@@ -10,3 +10,4 @@ coverage/
 ts-node*/
 /dist/
 
+/npm-debug.log

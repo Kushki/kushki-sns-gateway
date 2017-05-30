@@ -20,7 +20,7 @@ describe('KushkiSnsGateway - ', () => {
             accessKeyId: process.env.AWS_ACCESS_KEY_ID,
             secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
         });
-        message = 'patimarico';
+        message = 'pato456';
         region = 'us-east-1';
     });
     it('check functional snsGateway class with successful response', (done: (err: Error) => void) => {

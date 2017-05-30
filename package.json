@@ -1,6 +1,6 @@
 {
   "name": "@kushki/sns-gateway",
-  "version": "0.0.5",
+  "version": "0.0.12",
   "description": "Kushki SNS Gateway for managing AWS events.",
   "main": "dist/src/KushkiSnsGateway.js",
   "typings": "src/KushkiSnsGateway",
@@ -15,9 +15,7 @@
     "lint:check": "tslint --project 'tsconfig.json' --type-check -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint --project 'tsconfig.json' --type-check -c tslint.json --fix 'src/**/*.ts' 'test/**/*.ts'",
     "tsc:typing": "typings install",
-    "tsc:compile": "tsc",
-    "deploy": "npm-cli-login && npm publish --access public",
-    "ci-publish": "ci-publish"
+    "tsc:compile": "tsc"
   },
   "repository": {
     "type": "git",
