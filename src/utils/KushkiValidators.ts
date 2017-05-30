@@ -29,7 +29,7 @@ export class KushkiValidators {
         const validate: Ajv.ValidateFunction = ajv.compile(schema);
         const valid: boolean | Ajv.Thenable<void> = validate(this.body);
         if (validate.errors !== null) {
-            console.warn(`Validation Erros: \n ${JSON.stringify(validate.errors)}`);
+            console.warn(`Validation Errors: \n ${JSON.stringify(validate.errors)}`);
         }
         if (valid === false) {
             throw new Error('Cuerpo mal formado');

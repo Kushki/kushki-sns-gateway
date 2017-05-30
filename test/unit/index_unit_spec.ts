@@ -26,13 +26,18 @@ describe('KushkiSnsGateway - ', () => {
     it('check int snsGateway class with successful response', async () => {
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(str.random, str.random);
 
-        return expect(kushkiSns.payedEfecty(str.random)).not.to.eventually.rejectedWith('error');
+        return expect(kushkiSns.payedEfecty(str.random)).not.to.eventually.rejected;
     });
 
     it('check snsGateway class with non successful response', async () => {
         AWS.restore('SNS', 'publish');
         const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(str.random, str.random);
 
-        return expect(kushkiSns.payedEfecty(str.random)).to.eventually.rejectedWith('error');
+        return expect(kushkiSns.payedEfecty(str.random)).to.eventually.rejected;
+    });
+    it('check snsGateway class with non successful response, malformed body', async () => {
+        const kushkiSns: KushkiSnsGateway = new KushkiSnsGateway(str.random, str.random);
+
+        return expect(kushkiSns.payedEfecty('')).to.be.rejectedWith('Cuerpo mal formado');
     });
 });

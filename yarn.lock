@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@kushki/sns-gateway@file:../kushki-sns-gateway":
+  version "0.0.3"
+  dependencies:
+    ajv "^5.1.3"
+    aws-sdk "^2.57.0"
+    ts-node "^3.0.4"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"

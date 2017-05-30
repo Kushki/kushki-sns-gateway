@@ -1,6 +1,6 @@
 {
   "name": "@kushki/sns-gateway",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Kushki SNS Gateway for managing AWS events.",
   "main": "dist/src/KushkiSnsGateway.js",
   "typings": "src/KushkiSnsGateway",
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/Kushki/kushki-sns-gateway#readme",
   "devDependencies": {
+    "@kushki/sns-gateway": "file:../kushki-sns-gateway",
     "aws-sdk-mock": "^1.7.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
