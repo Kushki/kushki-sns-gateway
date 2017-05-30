@@ -1,0 +1,8 @@
+languages:
+  - typescript
+files:
+  - "src/**/*"
+  - "test/**/*"
+reporter: json
+output: "jscpd.json"
+limit: 0

@@ -4,3 +4,7 @@
 /typings
 /node_modules
 /.env
+/codeship.aes
+coverage/
+.nyc_output/
+ts-node*/

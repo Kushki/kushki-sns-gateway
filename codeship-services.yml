@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    encrypted_env_file:
+      - .env.encrypted
+    env_file:
+      - .env.encrypted
+    ports:
+      - 3000:3000
+    volumes:
+      - /usr/src/app/node_modules
+      - /usr/src/app/typings
+      - .:/usr/src/app
+    networks:
+      - kushki
+networks:
+  kushki:
+    driver: "bridge"

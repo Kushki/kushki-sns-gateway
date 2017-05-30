@@ -25,12 +25,13 @@ export class KushkiSnsGateway {
             };
             const validator: KushkiValidators = new KushkiValidators(stringValid, 'string_model');
             validator.validate();
+
             return await this.snsPublish(event);
         } catch (err) {
             throw err;
         }
     }
-    private snsPublish(event: string): Promise<PublishResponse> {
+    private async snsPublish(event: string): Promise<PublishResponse> {
         AWS.config.region = this.region;
         const SNS: AWS.SNS = new AWS.SNS();
 

@@ -1,0 +1,25 @@
+- type: serial
+  steps:
+    - name: lint-check
+      service: app
+      command: ./pipeline/01-lint.sh
+    - name: unit
+      tag: ^(feature+\/+KV+-+\d*)
+      service: app
+      command: ./pipeline/02-unit.sh
+    - name: coverage
+      tag: ^(feature+\/+KV+-+\d*)
+      service: app
+      command: ./pipeline/03-coverage.sh
+    - name: functional
+      tag: ^(feature+\/+KV+-+\d*)
+      service: app
+      command: ./pipeline/04-functional.sh
+    - name: integration
+      tag: ^(feature+\/+KV+-+\d*)
+      service: app
+      command: ./pipeline/05-integration.sh
+    - name: publish
+      tag: master
+      service: app
+      command: ./pipeline/06-publish.sh

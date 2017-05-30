@@ -5,7 +5,6 @@
 import * as Ajv from 'ajv';
 import * as fs from 'fs';
 import * as path from 'path';
-import {KushkiError} from './KushkiError';
 
 export type Models = 'string_model'
     | 'dynamo_records_output';
@@ -33,7 +32,7 @@ export class KushkiValidators {
             console.warn(`Validation Erros: \n ${JSON.stringify(validate.errors)}`);
         }
         if (valid === false) {
-            throw new KushkiError('K002');
+            throw new Error('Cuerpo mal formado');
         }
 
         return true;
