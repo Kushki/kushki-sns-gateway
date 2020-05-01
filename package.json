@@ -13,7 +13,9 @@
     "lint:duplicate": "yarn run jscpd",
     "lint:check": "tslint --project 'tsconfig.json' --type-check -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint --project 'tsconfig.json' --type-check -c tslint.json --fix 'src/**/*.ts' 'test/**/*.ts'",
-    "tsc:typing": "typings install"
+    "tsc:typing": "typings install",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -84,6 +86,8 @@
   "dependencies": {
     "ajv": "^5.1.3",
     "aws-sdk": "^2.57.0",
-    "ts-node": "^3.0.4"
-  }
+    "ts-node": "^3.0.4",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
